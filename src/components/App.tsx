@@ -172,10 +172,11 @@ const App: React.FunctionComponent = () => {
         <div className="flex flex-col items-center justify-center pt-32 gap-16">
           <p className="text-xs opacity-80 uppercase underline decoration-dotted">Experience</p>
           <div className="w-full h-auto items-center justify-center flex flex-col gap-8 lg:px-0 px-4">
-            {content.map((item, index) => (
-              <Card time={item.time} toColor={item.toColor} fromColor={item.fromColor}
-                    title={item.title} description={item.description}/>
-            ))}
+            <p>Coming soon...</p>
+            {/*{content.map((item, index) => (*/}
+            {/*  <Card time={item.time} toColor={item.toColor} fromColor={item.fromColor}*/}
+            {/*        title={item.title} description={item.description}/>*/}
+            {/*))}*/}
           </div>
         </div>
       </div>
