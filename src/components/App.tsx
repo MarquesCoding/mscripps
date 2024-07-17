@@ -90,7 +90,7 @@ const App: React.FunctionComponent = () => {
       exit={{opacity: 0}}
       transition={{duration: 0.25}}
 
-      className="w-full h-full bg-[#16181D] text-[#C7D2FE]/30 flex flex-col items-center lg:py-24">
+      className="w-full h-full background selection:bg-[#182034] selection:text-[#3B82F6] bg-[#16181D] text-[#C7D2FE]/30 flex flex-col items-center lg:py-24">
       <div className="absolute top-0 -left-5">
         <img className="w-40" src="./arrow.png" alt="arrow"/>
       </div>
@@ -104,7 +104,7 @@ const App: React.FunctionComponent = () => {
           <div className="mt-8">
             <p className="font-medium text-6xl lg:text-[8.5rem] leading-[1] relative">
               A <span className="relative z-5">
-                  <span className="text-[#3B82F6] relative z-20">Software Engineer</span>
+                  <span className="text-[#3B82F6] relative z-20 wavy">Software Engineer</span>
                   <span className="absolute left-0 bottom-1 w-full h-4 lg:h-20 bg-[#182034] z-0"></span>
                 </span>
               {' '}from the UK.
@@ -121,13 +121,13 @@ const App: React.FunctionComponent = () => {
                 custom={i}
                 animate={controls}
                 initial={{backgroundColor: 'rgba(255, 255, 255, 0.5)'}}
-                className="w-fit h-fit px-2 lg:py-1 text-[#16181D] text-sm lg:text-md rounded font-semibold"
+                className="w-fit h-fit px-2 lg:py-1 text-[#16181D] text-sm lg:text-md rounded font-semibold selection:bg-transparent selection:text-[#16181D]"
               >
                 {item}
               </motion.div>
             ))}
           </motion.div>
-          <a href="/cv.pdf" className="w-fit h-fit px-2 lg:py-1 text-white hover:opacity-50 duration-300 text-lg rounded bg-white/10 border border-white/10 mt-8">
+          <a href="/cv.pdf" className="w-fit selection:bg-transparent selection:text-white h-fit px-2 lg:py-1 text-white hover:opacity-50 duration-300 text-lg rounded bg-white/10 border border-white/10 mt-8">
             Resume
           </a>
         </motion.div>
