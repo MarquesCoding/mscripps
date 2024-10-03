@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Photo from "./Photo/Photo";
 import Card from "./Card/Card";
 import {AnimatePresence, motion, useAnimation} from "framer-motion"
+import {BsTwitterX} from "react-icons/bs";
 
 const App: React.FunctionComponent = () => {
 
@@ -90,7 +91,7 @@ const App: React.FunctionComponent = () => {
       exit={{opacity: 0}}
       transition={{duration: 0.25}}
 
-      className="w-full h-full background selection:bg-[#182034] selection:text-[#3B82F6] bg-[#16181D] text-[#C7D2FE]/30 flex flex-col items-center lg:py-24">
+      className="w-full h-screen background selection:bg-[#182034] selection:text-[#3B82F6] bg-[#16181D] text-[#C7D2FE]/30 flex flex-col items-center justify-center">
       <div className="absolute top-0 -left-5">
         <img className="w-40" src="./arrow.png" alt="arrow"/>
       </div>
@@ -100,85 +101,58 @@ const App: React.FunctionComponent = () => {
           animate={{opacity: 1, y: 0}}
           transition={{duration: 0.5, delay: 0.5}}
           className="flex flex-col p-12 lg:p-24">
-          <p className="text-xl lg:text-5xl">I'm <span className="text-white/30">Marques</span>.</p>
-          <div className="mt-8">
-            <p className="font-medium text-6xl lg:text-[8.5rem] leading-[1] relative">
-              A <span className="relative z-5">
+          <div className="">
+            <div className="flex flex-col gap-24 lg:gap-0 lg:flex-row">
+              <p className="font-medium text-6xl lg:text-[8.5rem] leading-[1] relative">
+                I'm a <span className="relative z-5">
                   <span className="text-[#3B82F6] relative z-20 wavy">Software Engineer</span>
                   <span className="absolute left-0 bottom-1 w-full h-4 lg:h-20 bg-[#182034] z-0"></span>
                 </span>
-              {' '}from the UK.
+                {' '} building things for the web.
+              </p>
+              <motion.div
+                initial={{opacity: 0, y: 100}}
+                animate={{opacity: 1, y: 0}}
+                transition={{duration: 0.5, delay: 1}}
+                className="flex w-full relative h-auto flex-col lg:flex-row justify-between gap-24 items-start">
+                <div
+                  className="relative flex flex-row w-full lg:w-fit h-full justify-center lg:justify-start lg:pl-48 items-start">
+                  <div
+                    className="w-52 lg:w-96 z-10 h-[15rem] lg:h-[30rem] bg-[#EAEEFF] rounded drop-shadow-2xl rotate-[5deg] hover:-translate-y-1.5 duration-300 flex justify-center p-4">
+                    <div className="w-8 h-8 rounded-full absolute -top-3 -right-3 border-4 border-dotted"/>
+                    <div className="w-8 h-8 rounded-full absolute -bottom-3 -left-3 border-4 border-dotted"/>
+                    <div className="w-52 lg:w-96 h-40 lg:h-80 bg-white rounded">
+                      <img src="./photo-1.jpg" alt="photo-1" className="w-full h-full object-cover rounded"/>
+                    </div>
+                  </div>
+                  <div
+                    className="w-52 lg:w-96 absolute h-[15rem] lg:h-[30rem] bg-[#EAEEFF] rounded shadow-[#C7D2FE] rotate-[-5deg] hover:-translate-y-1.5 duration-300 flex justify-center p-4">
+                    <div className="w-52 lg:w-96 h-40 lg:h-80 bg-white rounded">
+                      <img src="./photo-2.jpg" alt="photo-1" className="w-full h-full object-cover rounded"/>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-16 p-12 w-full lg:w-fit max-w-7xl">
+                </div>
+              </motion.div>
+            </div>
+            <p className="text-2xl max-w-6xl opacity-90">
+              Currently Full-Stack Software Engineer at Ocado Technology. Also building <a href="https://surfos.app" className="underline decoration-wavy text-[#3B82F6]">SurfOS</a>, a
+              open-source game panel. I'm passionate about building things for the web and I'm always looking for new
+              opportunities to learn and grow.
             </p>
           </div>
-          <motion.div
-            initial={{opacity: 0, y: 20}}
-            animate={{opacity: 1, y: 0}}
-            transition={{duration: 0.5, delay: 1}}
-            className="flex flex-row gap-2 pt-4 flex-wrap">
-            {items.map((item, i) => (
-              <motion.div
-                key={item}
-                custom={i}
-                animate={controls}
-                initial={{backgroundColor: 'rgba(255, 255, 255, 0.5)'}}
-                className="w-fit h-fit px-2 lg:py-1 text-[#16181D] text-sm lg:text-md rounded font-semibold selection:bg-transparent selection:text-[#16181D]"
-              >
-                {item}
-              </motion.div>
-            ))}
-          </motion.div>
-          <a href="/cv.pdf" className="w-fit selection:bg-transparent selection:text-white h-fit px-2 lg:py-1 text-white hover:opacity-50 duration-300 text-lg rounded bg-white/10 border border-white/10 mt-8">
-            Resume
-          </a>
-        </motion.div>
-        <motion.div
-          initial={{opacity: 0, y: 100}}
-          animate={{opacity: 1, y: 0}}
-          transition={{duration: 0.5, delay: 1.5}}
-          className="flex w-full relative h-auto flex-col lg:flex-row justify-between gap-24 items-start lg:pt-24">
-          <div
-            className="relative flex flex-row w-full lg:w-fit h-full justify-center lg:justify-start lg:pl-48 items-start">
-            <div
-              className="w-52 lg:w-96 z-10 h-[15rem] lg:h-[30rem] bg-[#EAEEFF] rounded drop-shadow-2xl rotate-[5deg] hover:-translate-y-1.5 duration-300 flex justify-center p-4">
-              <div className="w-8 h-8 rounded-full absolute -top-3 -right-3 border-4 border-dotted"/>
-              <div className="w-8 h-8 rounded-full absolute -bottom-3 -left-3 border-4 border-dotted"/>
-              <div className="w-52 lg:w-96 h-40 lg:h-80 bg-white rounded">
-                <img src="./photo-1.jpg" alt="photo-1" className="w-full h-full object-cover rounded"/>
-              </div>
-            </div>
-            <div
-              className="w-52 lg:w-96 absolute h-[15rem] lg:h-[30rem] bg-[#EAEEFF] rounded shadow-[#C7D2FE] rotate-[-5deg] hover:-translate-y-1.5 duration-300 flex justify-center p-4">
-              <div className="w-52 lg:w-96 h-40 lg:h-80 bg-white rounded">
-                <img src="./photo-2.jpg" alt="photo-1" className="w-full h-full object-cover rounded"/>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-16 p-12 w-full lg:w-fit max-w-7xl">
-            <p className="lg:text-4xl text-2xl">Born in Letchworth, UK. I’ve spent the last 4+ years working with
-              various companies
-              on creating <span className="text-[#3B82F6]">branding, websites and apps.</span></p>
-            <p className="lg:text-4xl text-2xl">Here, I share through my writing experiences, thoughts and ideas as a
-              Software
-              Engineer and everything I’m currently learning.</p>
+          <div className="flex flex-row items-center justify-center w-fit h-full gap-4">
+            <a href="/cv.pdf"
+               className="w-fit selection:bg-transparent selection:text-white h-full px-4 lg:py-1 text-white hover:opacity-50 duration-300 text-lg rounded bg-[#3B82F6] mt-8">
+              Resume
+            </a>
+            <a href="https://x.com/MarquesCoding"
+               className="w-fit min-h-full selection:bg-transparent selection:text-white px-4 lg:py-2 text-white hover:opacity-50 duration-300 text-lg rounded bg-white mt-8">
+              <BsTwitterX size={20} className="text-black"/>
+            </a>
           </div>
         </motion.div>
-        <div className="text-center flex flex-col items-center justify-center pt-48 gap-16">
-          <p className="text-xs opacity-80 uppercase underline decoration-dotted">Companies I've worked with</p>
-          <div className="w-full h-auto items-center justify-center flex flex-col lg:flex-row gap-24">
-            <img className="h-20 w-auto" src="./ocado.png" alt="ocado"/>
-            <img className="h-20 w-auto" src="./race.png" alt="race"/>
-          </div>
-        </div>
-        <div className="flex flex-col items-center justify-center pt-32 gap-16">
-          <p className="text-xs opacity-80 uppercase underline decoration-dotted">Experience</p>
-          <div className="w-full h-auto items-center justify-center flex flex-col gap-8 lg:px-0 px-4">
-            <p>Coming soon...</p>
-            {/*{content.map((item, index) => (*/}
-            {/*  <Card time={item.time} toColor={item.toColor} fromColor={item.fromColor}*/}
-            {/*        title={item.title} description={item.description}/>*/}
-            {/*))}*/}
-          </div>
-        </div>
       </div>
     </motion.div>
   )
